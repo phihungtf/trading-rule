@@ -6,12 +6,12 @@ theme: apple-basic
 layout: intro-image
 image: images/background.jpg
 # some information about your slides, markdown enabled
-title: Welcome to Slidev
+title: Trading Rule Identification by CNN | Group 9
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  ## Trading Rule Identification by CNN
+  Group 9
 
-  Learn more at [Sli.dev](https://sli.dev)
+  Learn more at [Google Colab](https://colab.research.google.com/drive/1vZx9P75a1Gmj0B90-0o28vHid54T9Mtx?usp=sharing)
 # apply any unocss classes to the current slide
 class: text-center
 # https://sli.dev/custom/highlighters.html
@@ -58,18 +58,65 @@ mdc: true
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none text-black">
     <carbon:edit />
   </button>
   <a href="https://colab.research.google.com/drive/1vZx9P75a1Gmj0B90-0o28vHid54T9Mtx?usp=sharing" target="_blank" alt="Google Colab" title="Open in Google Colab"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <img src="https://avatars.githubusercontent.com/u/33467679?s=280&v=4" width="30px"/>
+    class="text-xl slidev-icon-btn opacity-50 !border-none text-black">
+    <img src="images/colab.png" width="30px"/>
   </a>
 </div>
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
 -->
+
+---
+
+<style>
+.toc {
+  text-align: left;
+  margin: 2em;
+}
+
+.toc-item {
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  color: #3498db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toc-item:hover {
+  color: #1abc9c;
+}
+
+.toc-subitem {
+  margin-left: 1em;
+  font-size: 1.1em;
+  color: #3498db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0.5em;
+}
+
+.toc-subitem:hover {
+  color: #27ae60;
+}
+</style>
+
+# Table of Contents
+
+<div class="toc">
+  <div class="toc-item" @click="$slidev.nav.go(1)">1. Introduction</div>
+  <div class="toc-item" @click="$slidev.nav.go(2)">2. Trading signals with technical indicators</div>
+  <div class="toc-item" @click="$slidev.nav.go(3)">3. Data handling</div>
+  <div class="toc-item" @click="$slidev.nav.go(4)">4. Benchmarking alternative models</div>
+  <div class="toc-subitem" @click="$slidev.nav.go(5)">4.1. Benchmark 1 – simple trading rule</div>
+  <div class="toc-subitem" @click="$slidev.nav.go(6)">4.2. Benchmark 2 – simple classification network</div>
+  <div class="toc-item" @click="$slidev.nav.go(7)">5. Constructing a convolutional neural network</div>
+  <div class="toc-item" @click="$slidev.nav.go(8)">6. Summary</div>
+</div>
 
 ---
 
