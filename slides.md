@@ -129,6 +129,9 @@ image: '/images/introduction.jpg'
 # Introduction
 
 ---
+src: ./pages/intro.md
+---
+---
 layout: intro-image-right
 image: '/images/signal.jpg'
 ---
@@ -137,6 +140,9 @@ image: '/images/signal.jpg'
 
 # Trading signals with technical indicators
 
+---
+src: ./pages/signal.md
+---
 ---
 layout: intro-image-right
 image: '/images/data.png'
@@ -147,6 +153,9 @@ image: '/images/data.png'
 # Data handling
 
 ---
+src: ./pages/data_handling.md
+---
+---
 layout: intro-image-right
 image: '/images/ML.jpg'
 ---
@@ -155,6 +164,9 @@ image: '/images/ML.jpg'
 
 # Benchmarking alternative models
 
+---
+src: ./pages/benchmarking.md
+---
 ---
 layout: quote
 ---
@@ -165,6 +177,9 @@ layout: quote
     <img src="images/Ai-Neural-Network.gif" width="500px"></img>
   </div>
 
+---
+src: ./pages/CNN.md
+---
 ---
 layout: intro-image-right
 image: '/images/summary.jpg'
