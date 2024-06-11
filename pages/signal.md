@@ -1,1 +1,0 @@
-# Trading signals with technical indicators
