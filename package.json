@@ -1,18 +1,36 @@
 {
-  "name": "trading-rule",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export"
-  },
-  "dependencies": {
-    "@slidev/cli": "^0.49.5",
-    "@slidev/theme-apple-basic": "^0.25.1",
-    "@slidev/theme-bricks": "^0.25.0",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest",
-    "vue": "^3.4.27"
-  }
+	"name": "trading-rule",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"build": "slidev build",
+		"dev": "slidev --open",
+		"export": "slidev export"
+	},
+	"dependencies": {
+		"@slidev/cli": "^0.49.5",
+		"@slidev/theme-apple-basic": "^0.25.1",
+		"@slidev/theme-bricks": "^0.25.0",
+		"@slidev/theme-default": "latest",
+		"@slidev/theme-seriph": "latest",
+		"prettier": "^3.3.1",
+		"prettier-plugin-slidev": "^1.0.5",
+		"vue": "^3.4.27"
+	},
+	"prettier": {
+		"overrides": [
+			{
+				"files": [
+					"slides.md",
+					"pages/*.md"
+				],
+				"options": {
+					"parser": "slidev",
+					"plugins": [
+						"prettier-plugin-slidev"
+					]
+				}
+			}
+		]
+	}
 }
