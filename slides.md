@@ -181,7 +181,7 @@ layout: quote
   </div>
 
 ---
-src: ./pages/CNN.md
+src: ./pages/cnn.md
 ---
 
 ---
