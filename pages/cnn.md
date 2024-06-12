@@ -11,7 +11,7 @@
             </ul>
         </div>
         <div className="flex-1 text-center">
-            <img src='images/decision.png' alt="Decision Process" className="mx-auto"/>
+            <img src='/decision.png' alt="Decision Process" className="mx-auto"/>
         </div>
     </div>
 
@@ -43,7 +43,7 @@
         <p>Heuristics can guide rather than dictate the process</p>
       </div>
       <div className="flex-1">
-        <img src="images/decision-making.png" alt="Decision making" className="w-full h-auto" />
+        <img src="/decision-making.png" alt="Decision making" className="w-full h-auto" />
       </div>
     </div>
 
@@ -463,8 +463,8 @@ del(X_tr, X_vld, y_tr, y_vld, list_ch_train)
 </div>
 
 <div class="flex space-x-2 justify-between">
- <img src='images/loss.png' alt="Loss" className="w-1/2"/>
- <img src='images/acc.png' className="w-1/2" alt="Accuracy"/>
+ <img src='/loss.png' alt="Loss" className="w-1/2"/>
+ <img src='/acc.png' className="w-1/2" alt="Accuracy"/>
 </div>
 
 ---
@@ -538,6 +538,6 @@ ax.figure.savefig('figures/simpleclass_50_50.png')
       <h2 className="text-lg font-semibold mt-4">Plot the predictions accuracy heatmap</h2>
 </div>
 
-<img src='images/heatmap.png' className="mx-auto w-1/2" alt="Prediction Accuracy"/>
+<img src='/heatmap.png' className="mx-auto w-1/2" alt="Prediction Accuracy"/>
 
 ---

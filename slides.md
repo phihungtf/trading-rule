@@ -4,7 +4,7 @@ theme: apple-basic
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 layout: intro-image
-image: images/background.jpg
+image: /background.jpg
 # some information about your slides, markdown enabled
 title: Trading Rule Identification by CNN | Group 9
 info: |
@@ -23,12 +23,11 @@ drawings:
 transition: slide-left
 # enable MDC Syntax: https://sli.dev/guide/syntax#mdc-syntax
 mdc: true
-
 ---
 
 <div class="flex items-center justify-center space-x-5 mb-10 text-black">
   <div>
-    <img src="/images/hcmus.png" alt="HCMUS" class="h-20">
+    <img src="/hcmus.png" alt="HCMUS" class="h-20">
   </div>
   <div class="flex flex-col space-y-1 items-start">
     <div class="text-xs">Vietnam National University Ho Chi Minh City</div>
@@ -64,7 +63,7 @@ mdc: true
   </button>
   <a href="https://colab.research.google.com/drive/1vZx9P75a1Gmj0B90-0o28vHid54T9Mtx?usp=sharing" target="_blank" alt="Google Colab" title="Open in Google Colab"
     class="text-xl slidev-icon-btn opacity-50 !border-none text-black">
-    <img src="images/colab.png" width="30px"/>
+    <img src="/colab.png" width="30px"/>
   </a>
 </div>
 
@@ -121,7 +120,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 layout: intro-image-right
-image: '/images/introduction.jpg'
+image: "/introduction.jpg"
 ---
 
 <!-- Phần Introduction -->
@@ -131,9 +130,10 @@ image: '/images/introduction.jpg'
 ---
 src: ./pages/intro.md
 ---
+
 ---
 layout: intro-image-right
-image: '/images/signal.jpg'
+image: "/signal.jpg"
 ---
 
 <!-- Phần Trading signals with technical indicators -->
@@ -143,9 +143,10 @@ image: '/images/signal.jpg'
 ---
 src: ./pages/signal.md
 ---
+
 ---
 layout: intro-image-right
-image: '/images/data.png'
+image: "/data.png"
 ---
 
 <!-- Phần Data handling -->
@@ -155,9 +156,10 @@ image: '/images/data.png'
 ---
 src: ./pages/data_handling.md
 ---
+
 ---
 layout: intro-image-right
-image: '/images/ML.jpg'
+image: "/ML.jpg"
 ---
 
 <!-- Phần Benchmarking alternative models -->
@@ -167,6 +169,7 @@ image: '/images/ML.jpg'
 ---
 src: ./pages/benchmarking.md
 ---
+
 ---
 layout: quote
 ---
@@ -174,15 +177,16 @@ layout: quote
 <!-- Phần Constructing a convolutional neural network -->
   <div class="flex justify-between items-center">
     <h1>Constructing a convolutional neural network</h1>
-    <img src="images/Ai-Neural-Network.gif" width="500px"></img>
+    <img src="/Ai-Neural-Network.gif" width="500px"></img>
   </div>
 
 ---
-src: ./pages/CNN.md
+src: ./pages/cnn.md
 ---
+
 ---
 layout: intro-image-right
-image: '/images/summary.jpg'
+image: "/summary.jpg"
 ---
 
 <!-- Phần Summary -->
