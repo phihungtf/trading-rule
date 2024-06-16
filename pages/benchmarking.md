@@ -1,6 +1,7 @@
 ## Overview
 
 ### Topics Covered
+
 - Simple Trading Rule
 - Simple Classification Network
 - Deep Convolutional Network
@@ -11,33 +12,38 @@
 ## Simple Trading Rule
 
 ### Concept
+
 - Relies on trend persistence
 - Uses moving averages to determine buy/sell signals
 
 ### Methodology
+
 - Buy when short-term moving averages are above long-term moving averages
 - Sell when the opposite is true
+
 ---
 
 ## Simple Trading Rule - Implementation
 
 ### Trading Rule Concept
+
 - Buy Signal: 20-day moving average > 50-day moving average > 200-day moving average
 - Sell Signal: 20-day moving average < 50-day moving average < 200-day moving average
 - Note: Data is already scaled for the 200-day moving average
 
 ### Code Example
+
 ```python
 def trading_rule_20_50_200(df):
     # Initialize RuleAction column with 'None'
     df['RuleAction'] = 'None'
-    
+
     # Apply Buy rule
     df.loc[((df['mav20'] > df['mav50']) & (df['mav50'] > df['mav200'])), 'RuleAction'] = 'Buy'
-    
+
     # Apply Sell rule
     df.loc[((df['mav20'] < df['mav50']) & (df['mav50'] < df['mav200'])), 'RuleAction'] = 'Sell'
-    
+
     return df
 ```
 
@@ -46,6 +52,7 @@ def trading_rule_20_50_200(df):
 ## Simple Trading Rule - Implementation
 
 ### Applied to 50 random stock data
+
 ```python
 csvfilename = 'train_50.csv'
 data = pd.read_csv('sampledata/'+ csvfilename)
@@ -55,10 +62,10 @@ data.sample(5)
 ```
 
 ### Result
+
 <img src='/simple-trading-rule-table.png' alt="simple-trading-rule-table" className="mx-auto"/>
 
 ---
-
 
 ## Simple Trading Rule - Accuracy Analysis
 
@@ -67,6 +74,7 @@ data.sample(5)
 <div style="margin-right: 5%; margin-left: 5%;">
 
 ### Key Points
+
 - #### Accuracy: ~40%
 - #### Low accuracy and high misclassification rates
 - #### False signals due to noise in signal levels
@@ -75,13 +83,11 @@ data.sample(5)
 </div>
 
 ---
-Sure, here is the revised version of the slides without the "Slide" and numbers, and with the new titles starting with "Simple Classification Network":
-
----
 
 ## Simple Classification Network - Overview
 
 ### Topics Covered
+
 - Simple Classification Network
 - Diagnostic Chart
 - Heatmap Analysis
@@ -92,12 +98,14 @@ Sure, here is the revised version of the slides without the "Slide" and numbers,
 ## Simple Classification Network - Background
 
 ### Background
+
 - Inspired by Fisher's Iris dataset classification
 - Uses a multilayer perceptron
 - Three input layers, one hidden layer, and one output layer
 - Fully connected with a sigmoid activation function
 
 ### Similarities to Our Problem
+
 - Few characteristics (e.g., moving averages)
 - Classification into three categories: Buy, Sell, Hold
 
@@ -106,6 +114,7 @@ Sure, here is the revised version of the slides without the "Slide" and numbers,
 ## Simple Classification Network - Data Preparation
 
 ### Sample Data Distribution
+
 ```python
 import pandas as pd
 import seaborn as sns
@@ -141,11 +150,12 @@ num_labels = 3
 num_hidden = 10
 
 # Build network with TensorFlow
+
 graph = tf.Graph()
 with graph.as_default():
-    tf_train_set    = tf.constant(X_train)
-    tf_train_labels = tf.constant(y_train)
-    tf_valid_set    = tf.constant(X_test)
+tf_train_set = tf.constant(X_train)
+tf_train_labels = tf.constant(y_train)
+tf_valid_set = tf.constant(X_test)
 
     print(tf_train_set)
     print(tf_train_labels)
@@ -154,11 +164,12 @@ with graph.as_default():
     ## there would be num_hidden
     weights_1 = tf.Variable(tf.random.truncated_normal([num_features, num_hidden]))
     weights_2 = tf.Variable(tf.random.truncated_normal([num_hidden, num_labels]))
+
 ```
 
 </div>
 </div>
-
+```
 
 ---
 
@@ -200,7 +211,8 @@ with graph.as_default():
 
 ## Simple Classification Network - Training and Evaluation
 
-### Code Example 
+### Code Example
+
 ```python
 with graph.as_default():
     saver = tf.compat.v1.train.Saver()
@@ -223,7 +235,9 @@ with tf.compat.v1.Session(graph = graph) as session:
 ---
 
 ## Simple Classification Network - Training and Evaluation
+
 ### Results
+
 <img src='/simple-trading-rule-train-validation.png' alt="Diagnostic Chart" className="mx-auto" style="height: 30%;"/>
 
 ---
@@ -231,6 +245,7 @@ with tf.compat.v1.Session(graph = graph) as session:
 ## Simple Classification Network - Heatmap Analysis
 
 ### Heatmap Generation
+
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -252,11 +267,13 @@ plt.ylabel('True')
 plt.savefig('figures/heatmap.png')
 plt.show()
 ```
+
 ---
 
 ## Simple Classification Network - Heatmap Analysis
 
 ### Heatmap
+
 <img src='/simple-classification-network-heatmap.png' alt="Diagnostic Chart" className="mx-auto" style="height: 30%;"/>
 
 ---
@@ -264,6 +281,7 @@ plt.show()
 ## Simple Classification Network - Performance Summary
 
 ### Key Points
+
 - **Accuracy Improvement**: From 40% to 64%
 - **Misclassification**: Reduced significantly
 - **New Benchmark**: Higher accuracy with reduced misclassification
@@ -273,10 +291,12 @@ plt.show()
 ## Simple Classification Network - Conclusion
 
 ### Key Takeaways
+
 - Neural network outperforms simple trading rules
 - Classification network achieves higher accuracy
 - Effective in distinguishing between Buy, Sell, and Hold signals
 
 ### Future Work
+
 - Explore deeper network architectures
 - Evaluate with larger datasets
