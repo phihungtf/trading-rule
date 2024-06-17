@@ -200,3 +200,7 @@ image: "/summary.jpg"
 <!-- Phần Summary -->
 
 # Summary
+
+---
+src: ./pages/summary.md
+---
