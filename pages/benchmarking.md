@@ -109,6 +109,10 @@ data.sample(5)
 - Few characteristics (e.g., moving averages)
 - Classification into three categories: Buy, Sell, Hold
 
+<img src='/paper.png' className="absolute top-15 right-5 w-100 border-2"/>
+
+<img src='/simple network.png' className='w-80'/>
+
 ---
 
 ## Simple Classification Network - Data Preparation
@@ -164,12 +168,10 @@ tf_valid_set = tf.constant(X_test)
     ## there would be num_hidden
     weights_1 = tf.Variable(tf.random.truncated_normal([num_features, num_hidden]))
     weights_2 = tf.Variable(tf.random.truncated_normal([num_hidden, num_labels]))
-
 ```
 
 </div>
 </div>
-```
 
 ---
 

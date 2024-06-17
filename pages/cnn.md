@@ -49,7 +49,82 @@
 
 ---
 
-<h1 className="text-lg font-semibold mb-2">CNN Architecture</h1>
+# What is a Convolutional Neural Network (CNN)?
+
+- A type of deep learning algorithm well suited for visual data.
+- Uses principles from linear algebra, particularly convolution operations.
+- Extracts features and identifies patterns within images.
+- Inspired by the human brain's visual cortex.
+- Used in tasks such as image recognition, object detection, and more.
+
+---
+
+# Applications of CNN
+
+- Self-driving cars
+- Facial recognition
+- Medical image analysis
+- Audio and other signal data processing
+- Forecasting time-series
+
+---
+
+# How CNNs Work
+
+- Layers detect different features of an input image.
+- Use convolution operation to slide a filter over the image.
+- Create feature maps to highlight detected features.
+- Build hierarchical representations of the image.
+
+---
+
+# CNN Architecture
+
+- **Convolutional Layer**: Detects specific features using filters.
+- **Pooling Layer**: Reduces dimensionality and retains critical information.
+- **Fully Connected Layer**: Classifies images based on extracted features.
+
+<img src='/structure_of_a_cnn-f.png' className='mx-auto w-full'/>
+
+---
+
+# Convolutional Layer
+
+- Fundamental building block of a CNN.
+- Uses filters to detect features by sliding over the input image.
+- Generates feature maps representing feature presence and intensity.
+- Identifies basic to complex patterns through multiple layers.
+
+---
+
+# Pooling Layer
+
+- Follows the convolutional layer.
+- Reduces dimensionality through downsampling (e.g., max pooling, average pooling).
+- Improves efficiency and generalization ability.
+- Retains prominent features for tasks like object detection and image classification.
+
+---
+
+# Fully Connected Layer
+
+- Critical in the final stages of a CNN.
+- Each neuron connects to every neuron in the next layer.
+- Integrates features extracted from previous layers.
+- Balances computational efficiency and capability to learn complex patterns.
+
+---
+
+# CNNs vs. Traditional Neural Networks
+
+- Traditional neural networks use fully connected layers throughout.
+- CNNs have fewer parameters due to convolutional layers.
+- Efficient at handling image data through parameter sharing.
+- Pooling layers reduce data dimensionality and improve efficiency.
+
+---
+
+<h1 className="text-lg font-semibold mb-2">CNN Architecture For Trading Rule Identification</h1>
 <ul className="list-disc ml-5 mt-10">
   <li>An input layer: 12 x 3 tensor representing 12 observations of 3 features</li>
   <li>A convolutional layer: Convolution to a space of a 6 x 6 tensor to capture patterns</li>
