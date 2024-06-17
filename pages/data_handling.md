@@ -10,6 +10,8 @@ For example, to retrieve the stock data of Apple Inc. (AAPL) from December 31, 2
 
 https://finance.yahoo.com/quote/AAPL/history?period1=1577811600&period2=1609433999&filter=history&interval=1d&frequency=1d
 
+<img src='/Yahoo!_Finance_logo_2021.png' className='mx-auto w-100 mt-10'/>
+
 ---
 layout: image
 image: "/aapl-stock-data.png"

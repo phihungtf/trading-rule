@@ -25,3 +25,24 @@
 - Complement expert traders' thought processes.
 - Allow model tweaks and expanded asset sets for better trading P&L.
 - Potential use in asset allocation or alpha model strategies.
+
+---
+
+# References
+
+#### 1. L. Troiano, A. Bhandari, and E.M. Villa. Hands-On Deep Learning for Finance: Implement deep learning techniques and algorithms to create powerful trading strategies. Packt Publishing, 2020
+#### 2. Filippo Maria Bianchi. Python Time Series Handbook. Last accessed June 18, 2024. Available at https://filippomb.github.io/python-time-series-handbook
+#### 3. Rahul Awati. Convolutional neural network (CNN). Last accessed June 18, 2024. Available at https://www.techtarget.com/searchenterpriseai/definition/convolutional-neural-network
+
+---
+layout: statement
+---
+
+# Thanks for Listening!
+
+---
+layout: fact
+---
+
+# Questions?
+Feel Free to Ask!
