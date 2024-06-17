@@ -141,7 +141,11 @@ image: "/signal.jpg"
 # Trading signals with technical indicators
 
 ---
-src: ./pages/signal.md
+src: ./pages/signal_mov.md
+---
+
+---
+src: ./pages/signal_rule.md
 ---
 
 ---
