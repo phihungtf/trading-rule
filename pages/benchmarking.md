@@ -101,29 +101,29 @@ df_accuracy
 **Define `prediction_accuracy`**
 
 ```python
-def prediction_accuracy(ytest, predict_val):
-    # Initialize a 3x3 accuracy matrix
-    # Rows represent predictions, columns represent actual test values
-    # Order: BUY, NONE, SELL
-    accuracy_mat = np.zeros([3, 3], dtype=float)
+        def prediction_accuracy(ytest, predict_val):
+            # Initialize a 3x3 accuracy matrix
+            # Rows represent predictions, columns represent actual test values
+            # Order: BUY, NONE, SELL
+            accuracy_mat = np.zeros([3, 3], dtype=float)
 
-    # Iterate through each column of ytest and predict_val
-    for i in range(ytest.shape[1]):
-        for j in range(predict_val.shape[1]):
-            # Calculate the sum of correct predictions for each pair (i, j)
-            accuracy_mat[i, j] = sum(predict_val[(predict_val[:, j] * ytest[:, i] > 0), j])
+            # Iterate through each column of ytest and predict_val
+            for i in range(ytest.shape[1]):
+                for j in range(predict_val.shape[1]):
+                    # Calculate the sum of correct predictions for each pair (i, j)
+                    accuracy_mat[i, j] = sum(predict_val[(predict_val[:, j] * ytest[:, i] > 0), j])
 
-    # Calculate the total number of observations
-    allobs = sum(map(sum, accuracy_mat))
+            # Calculate the total number of observations
+            allobs = sum(map(sum, accuracy_mat))
 
-    # Divide each element of the accuracy matrix by the total number of observations to get the percentage
-    accuracy_mat = np.divide(accuracy_mat, allobs) * 100
+            # Divide each element of the accuracy matrix by the total number of observations to get the percentage
+            accuracy_mat = np.divide(accuracy_mat, allobs) * 100
 
-    # Convert the accuracy matrix to a DataFrame with appropriate column and row labels
-    accuracy_mat = pd.DataFrame(accuracy_mat, columns=['Buy', 'None', 'Sell'], index=['Buy', 'None', 'Sell'])
+            # Convert the accuracy matrix to a DataFrame with appropriate column and row labels
+            accuracy_mat = pd.DataFrame(accuracy_mat, columns=['Buy', 'None', 'Sell'], index=['Buy', 'None', 'Sell'])
 
-    # Return the accuracy matrix as a DataFrame
-    return accuracy_mat
+            # Return the accuracy matrix as a DataFrame
+            return accuracy_mat
 
 ```
 ---
@@ -136,7 +136,7 @@ def prediction_accuracy(ytest, predict_val):
 
 ### Key Points
 
-- #### Accuracy: ~40%
+- #### Accuracy: ~50%
 - #### Low accuracy and high misclassification rates
 - #### False signals due to noise in signal levels
 - #### Does not distinguish between temporary shifts in moving averages
@@ -345,7 +345,7 @@ plt.show()
 
 ### Key Points
 
-- **Accuracy Improvement**: From 40% to 64%
+- **Accuracy Improvement**: From 50% to 70%
 - **Misclassification**: Reduced significantly
 - **New Benchmark**: Higher accuracy with reduced misclassification
 
