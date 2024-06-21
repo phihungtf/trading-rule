@@ -197,7 +197,62 @@ g.savefig('figures/train_50_desc.png')
 
 <img src='/diagnostic-chart.png' alt="Diagnostic Chart" className="mx-auto" style="height: 30%;"/>
 
+
 ---
+
+
+## Simple Classification Network - Neural Network Implementation
+
+#### Handling Missing Values and Data Preparation
+```python
+data['Action'].fillna('None', inplace=True)  # Replace NaN values in 'Action' column with 'None'
+
+cols = data.columns  # Get all column names
+features = cols[0:6]  # Select the first 6 columns as features
+labels = cols[6]  # Select the 7th column as labels
+
+indices = data.index.tolist()  # Get the indices of the data
+indices = np.array(indices)  # Convert indices to numpy array
+np.random.shuffle(indices)  # Shuffle the indices
+
+# Reindex the data based on the shuffled indices
+X = data.reindex(indices)[features]
+y = data.reindex(indices)[labels]
+
+# Convert categorical labels to binary matrix
+y = pd.get_dummies(y)
+```
+
+
+---
+
+## Simple Classification Network - Neural Network Implementation
+
+#### Splitting Data into Training and Testing Sets
+```python
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)  # Split data into training and testing sets
+
+# Convert data to numpy arrays and change dtype to float32
+X_train = np.array(X_train).astype(np.float32)
+X_test  = np.array(X_test).astype(np.float32)
+y_train = np.array(y_train).astype(np.float32)
+y_test  = np.array(y_test).astype(np.float32)
+
+# Display shapes of the datasets
+X_train.shape, X_test.shape, y_train.shape, y_test.shape
+```
+```python
+((185321, 6), (79424, 6), (185321, 3), (79424, 3))
+```
+
+**Explanation:**
+- **Shape Verification**: Check the shapes of the datasets to ensure correct splitting and conversion.
+  - `X_train.shape` and `X_test.shape`: Shapes of training and testing feature sets.
+  - `y_train.shape` and `y_test.shape`: Shapes of training and testing label sets.
+
+---
+
+
 
 ## Simple Classification Network - Neural Network Implementation
 
@@ -221,9 +276,6 @@ with graph.as_default():
 tf_train_set = tf.constant(X_train)
 tf_train_labels = tf.constant(y_train)
 tf_valid_set = tf.constant(X_test)
-
-    print(tf_train_set)
-    print(tf_train_labels)
 
     ## Note, since there is only 1 layer there are actually no hidden layers... but if there were
     ## there would be num_hidden
@@ -345,7 +397,7 @@ plt.show()
 
 ### Key Points
 
-- **Accuracy Improvement**: From 50% to 70%
+- **Accuracy Improvement**: From 50% to 71%
 - **Misclassification**: Reduced significantly
 - **New Benchmark**: Higher accuracy with reduced misclassification
 
