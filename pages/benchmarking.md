@@ -69,6 +69,67 @@ data.sample(5)
 
 ## Simple Trading Rule - Accuracy Analysis
 
+**Evaluating Prediction Accuracy**
+
+```python
+# Convert actions into binary matrices
+ytest = np.array(pd.get_dummies(data.Action))  # Actual actions
+predict_valid = np.array(pd.get_dummies(data.RuleAction))  # Predicted actions
+
+# Evaluate prediction accuracy
+df_accuracy = prediction_accuracy(ytest, predict_valid)
+
+df_accuracy 
+```
+
+**Example of `ytest` và `predict_valid`**
+
+| Action | One-Hot Encoding (ytest) | RuleAction | One-Hot Encoding (predict_valid) |
+|--------|---------------------------|------------|----------------------------------|
+| Buy    | [1, 0, 0]                 | Buy        | [1, 0, 0]                        |
+| Buy    | [1, 0, 0]                 | Buy        | [1, 0, 0]                        |
+| Sell   | [0, 0, 1]                 | None       | [0, 1, 0]                        |
+| Buy    | [1, 0, 0]                 | Buy        | [1, 0, 0]                        |
+| Sell   | [0, 0, 1]                 | None       | [0, 1, 0]                        |
+
+
+---
+
+## Simple Trading Rule - Accuracy Analysis
+
+
+**Define `prediction_accuracy`**
+
+```python
+def prediction_accuracy(ytest, predict_val):
+    # Initialize a 3x3 accuracy matrix
+    # Rows represent predictions, columns represent actual test values
+    # Order: BUY, NONE, SELL
+    accuracy_mat = np.zeros([3, 3], dtype=float)
+
+    # Iterate through each column of ytest and predict_val
+    for i in range(ytest.shape[1]):
+        for j in range(predict_val.shape[1]):
+            # Calculate the sum of correct predictions for each pair (i, j)
+            accuracy_mat[i, j] = sum(predict_val[(predict_val[:, j] * ytest[:, i] > 0), j])
+
+    # Calculate the total number of observations
+    allobs = sum(map(sum, accuracy_mat))
+
+    # Divide each element of the accuracy matrix by the total number of observations to get the percentage
+    accuracy_mat = np.divide(accuracy_mat, allobs) * 100
+
+    # Convert the accuracy matrix to a DataFrame with appropriate column and row labels
+    accuracy_mat = pd.DataFrame(accuracy_mat, columns=['Buy', 'None', 'Sell'], index=['Buy', 'None', 'Sell'])
+
+    # Return the accuracy matrix as a DataFrame
+    return accuracy_mat
+
+```
+---
+
+## Simple Trading Rule - Accuracy Analysis
+
 <img src='/simple-trading-rule-heatmap.png' alt="simple-trading-rule-table" className="mx-auto" style="width: 50%;"/>
 
 <div style="margin-right: 5%; margin-left: 5%;">
