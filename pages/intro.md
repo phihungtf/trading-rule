@@ -65,10 +65,7 @@ con người thường tìm cách hiểu và giải thích chúng bằng cách t
 - Let’s explore how machine learning, specifically Convolutional Neural Networks (CNNs), can help us develop better trading strategies.
 
 <!-- 
-- Mặc dù những meme này hài hước, nhưng chúng lại phản ánh đúng thách thức trong việc trading. 
-- Chúng ta hãy cùng tìm hiểu cách sử dụng CNNs (Mạng neural tích chập) để phát triển những chiến lược trading tốt hơn.
-- Mô hình mạng neural tích chập (CNN) là 1 trong những mô hình để nhận dạng và phân loại hình ảnh. Phổ biến nhất là được sử dụng để
-nhận diện khuôn mặt.
+
 -->
 
 ## What will be introducing
@@ -89,6 +86,13 @@ We will investigate a simple trading rule and then develop that trading rule usi
 </div>
 
 <!--
+- Mặc dù những meme này hài hước, nhưng chúng lại phản ánh đúng thách thức trong việc trading. 
+- Chúng ta hãy cùng tìm hiểu cách sử dụng CNNs (Mạng neural tích chập) để phát triển những chiến lược trading tốt hơn.
+- Mô hình mạng neural tích chập (CNN) là 1 trong những mô hình để nhận dạng và phân loại hình ảnh. Phổ biến nhất là được sử dụng để
+nhận diện khuôn mặt.
+
+\=======================================
+
 - Bây giờ chúng ta sẽ xem xét một quy luật trading cơ bản sau đó phát triển quy luật đó sử dụng kỹ thuật học máy không giám sát để cải tiến nó
 - Các bước để chúng ta tiến hành việc này:
     - Thảo luận về quy luật mà chúng ta muốn xét
