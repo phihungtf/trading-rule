@@ -21,9 +21,9 @@ con người thường tìm cách hiểu và giải thích chúng bằng cách t
 
 # A Lighthearted Look at Trading
 
-<div className="flex justify-between">
+<div className="flex justify-between space-x-4">
         <div className="flex-1">
-            <ul className="list-disc ml-5 mt-10 text-xl">
+            <ul className="list-disc ml-5 mt-10 text-2xl">
             <li>Traders often feel like the stock market is an unpredictable force that takes everything without notice.</li>
             <li>This captures the frustration and challenges of trying to predict market movements.</li>
             </ul>
@@ -43,7 +43,7 @@ con người thường tìm cách hiểu và giải thích chúng bằng cách t
 
 <div className="flex justify-between">
     <div className="flex-1">
-        <ul className="list-disc ml-5 mt-10 text-xl">
+        <ul className="list-disc ml-5 mt-10 text-2xl">
         <li>Many traders wish their strategies would work flawlessly, just like hoping on a shooting star.</li>
         <li>This illustrates the common wishful thinking and the reality of trading challenges.</li>
         </ul>

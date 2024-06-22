@@ -1,4 +1,7 @@
 # Simple Trading Rule
+
+<div className='h-1'></div>
+
 **Using 20-day, 50-day, 200-day Moving Averages**
  
 - 20-day MA: Captures short-term trends (information trades)

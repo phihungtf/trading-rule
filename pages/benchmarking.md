@@ -1,33 +1,38 @@
-## Overview
+# Overview
 
 ### Topics Covered
-
-- Simple Trading Rule
-- Simple Classification Network
+<ul className='text-3xl'>
+<li>Simple Trading Rule</li>
+<li>Simple Classification Network</li>
+</ul>
 
 <!-- Trong phần này ta sẽ cùng khám phá hai chủ đề chính: Quy tắc Giao dịch Đơn giản và Mạng Phân loại Đơn giản.  -->
 ---
 
-## Simple Trading Rule
+# Simple Trading Rule
 
 ### Concept
 
-- Relies on trend persistence
-- Uses moving averages to determine buy/sell signals
+<ul className='text-3xl'>
+<li>Relies on trend persistence</li>
+<li>Uses moving averages to determine buy/sell signals</li>
+</ul>
 
 
 <!-- Đầu tiên, chúng ta sẽ nói về Quy tắc Giao dịch Đơn giản. Quy tắc này dựa vào xu hướng của thị trường và sử dụng các đường trung bình động để xác định các tín hiệu mua và bán. -->
 
 ### Methodology
 
-- Buy when short-term moving averages are above long-term moving averages
-- Sell when the opposite is true
+<ul className='text-3xl'>
+<li>Buy when short-term moving averages are above long-term moving averages</li>
+<li>Sell when the opposite is true</li>
+</ul>
 
 <!-- Phương pháp của chúng ta là mua khi các đường trung bình động ngắn hạn cao hơn đường trung bình động dài hạn và bán khi điều ngược lại xảy ra. -->
 
 ---
 
-## Simple Trading Rule - Implementation
+# Simple Trading Rule - Implementation
 
 ### Trading Rule Concept
 
@@ -56,7 +61,7 @@ def trading_rule_20_50_200(df):
 <!-- Đây là ví dụ cài đặt của quy tắc giao dịch chúng ta vừa thảo luận. -->
 ---
 
-## Simple Trading Rule - Implementation
+# Simple Trading Rule - Implementation
 
 ### Applied to 50 random stock data
 
@@ -75,7 +80,7 @@ data.sample(5)
 
 ---
 
-## Simple Trading Rule - Accuracy Analysis
+# Simple Trading Rule - Accuracy Analysis
 
 **Evaluating Prediction Accuracy**
 
@@ -104,7 +109,7 @@ df_accuracy
 
 ---
 
-## Simple Trading Rule - Accuracy Analysis
+# Simple Trading Rule - Accuracy Analysis
 
 
 **Define `prediction_accuracy`**
@@ -137,7 +142,7 @@ df_accuracy
 ```
 ---
 
-## Simple Trading Rule - Accuracy Analysis
+# Simple Trading Rule - Accuracy Analysis
 
 <img src='/simple-trading-rule-heatmap.png' alt="simple-trading-rule-table" className="mx-auto" style="width: 50%;"/>
 
@@ -160,7 +165,7 @@ df_accuracy
 -->
 ---
 
-## Simple Classification Network - Background
+# Simple Classification Network - Background
 
 ### Background
 
@@ -174,7 +179,7 @@ df_accuracy
 - Few characteristics (e.g., moving averages)
 - Classification into three categories: Buy, Sell, Hold
 
-<img src='/paper.png' className="absolute top-15 right-5 w-100 border-2"/>
+<img src='/paper.png' className="absolute top-25 right-5 w-100 border-2"/>
 
 <img src='/simple network.png' className='w-80'/>
 
@@ -198,7 +203,7 @@ Hàm kích hoạt sigmoid: Trong mạng MLP của bạn, các giá trị đầu 
 
 ---
 
-## Simple Classification Network - Data Preparation
+# Simple Classification Network - Data Preparation
 
 ### Sample Data Distribution
 
@@ -217,9 +222,9 @@ g.savefig('figures/train_50_desc.png')
 - Sau đó, tạo biểu đồ cặp đôi để trực quan hóa phân bố của các đặc trưng với nhau, phân theo hành động (Action). -->
 ---
 
-## Simple Classification Network - Diagnostic Chart
+# Simple Classification Network - Diagnostic Chart
 
-<img src='/diagnostic-chart.png' alt="Diagnostic Chart" className="mx-auto" style="height: 30%;"/>
+<img src='/diagnostic-chart.png' alt="Diagnostic Chart" className="mx-auto w-150"/>
 
 <!-- 
 -  Biểu đồ cặp cho thấy sự phân bố của các điểm dữ liệu trong không gian đặc trưng, tức là không gian mà các đặc trưng (các trung bình động) chiếm giữ.
@@ -229,7 +234,7 @@ g.savefig('figures/train_50_desc.png')
 ---
 
 
-## Simple Classification Network - Neural Network Implementation
+# Simple Classification Network - Neural Network Implementation
 
 #### Handling Missing Values and Data Preparation
 ```python
@@ -261,7 +266,7 @@ Xáo trộn dữ liệu giúp đảm bảo rằng các mẫu được phân ph�
 
 ---
 
-## Simple Classification Network - Neural Network Implementation
+# Simple Classification Network - Neural Network Implementation
 
 #### Splitting Data into Training and Testing Sets
 ```python
@@ -300,7 +305,7 @@ Giải thích shape:
 
 
 
-## Simple Classification Network - Neural Network Implementation
+# Simple Classification Network - Neural Network Implementation
 
 ### Code Example
 
@@ -354,7 +359,7 @@ Trọng số (weights_1, weights_2): Quyết định mức độ quan trọng c�
  -->
 ---
 
-## Simple Classification Network - Neural Network Implementation
+# Simple Classification Network - Neural Network Implementation
 
 ### Code Example
 
@@ -433,7 +438,7 @@ Validation: tương tự …
  -->
 ---
 
-## Simple Classification Network - Training and Evaluation
+# Simple Classification Network - Training and Evaluation
 
 ### Code Example
 
@@ -470,11 +475,11 @@ with tf.compat.v1.Session(graph = graph) as session:
  -->
 ---
 
-## Simple Classification Network - Training and Evaluation
+# Simple Classification Network - Training and Evaluation
 
 ### Results
 
-<img src='/simple-trading-rule-train-validation.png' alt="Diagnostic Chart" className="mx-auto" style="height: 30%;"/>
+<img src='/simple-trading-rule-train-validation.png' alt="Diagnostic Chart" className="mx-auto w-70"/>
 
 <!-- 
 - Hình này hiển thị kết quả của quá trình huấn luyện và kiểm tra mô hình.
@@ -484,7 +489,7 @@ with tf.compat.v1.Session(graph = graph) as session:
  -->
 ---
 
-## Simple Classification Network - Heatmap Analysis
+# Simple Classification Network - Heatmap Analysis
 
 ### Heatmap Generation
 
@@ -520,7 +525,7 @@ ax.figure.savefig('figures/simpleclass_50_50.png')
  -->
 ---
 
-## Simple Classification Network - Heatmap Analysis
+# Simple Classification Network - Heatmap Analysis
 
 ### Heatmap
 
@@ -528,7 +533,7 @@ ax.figure.savefig('figures/simpleclass_50_50.png')
 
 ---
 
-## Simple Classification Network - Performance Summary
+# Simple Classification Network - Performance Summary
 
 ### Key Points
 

@@ -27,29 +27,29 @@ mdc: true
 
 <div class="flex items-center justify-center space-x-5 mb-10 text-black">
   <div>
-    <img src="/hcmus.png" alt="HCMUS" class="h-20">
+    <img src="/hcmus.png" alt="HCMUS" class="h-24">
   </div>
-  <div class="flex flex-col space-y-1 items-start">
-    <div class="text-xs">Vietnam National University Ho Chi Minh City</div>
-    <div class="text-xs">University of Science</div>
-    <div class="text-xs">Faculty of Information Technology</div>
-    <div class="text-xs">Module: Advanced Topics in Software Development Technology</div>
+  <div class="flex flex-col space-y-1 items-start text-sm">
+    <div>Vietnam National University Ho Chi Minh City</div>
+    <div>University of Science</div>
+    <div>Faculty of Information Technology</div>
+    <div>Module: Advanced Topics in Software Development Technology</div>
   </div>
 </div>
 
-<h1 class="text-black">Trading Rule Identification</h1>
+<h1 class="text-black text-4xl font-extrabold">Trading Rule Identification</h1>
 
-<h1 class="text-black">by CNN</h1>
+<h1 class="text-black text-4xl font-extrabold">by CNN</h1>
 
 <div class="flex justify-between mx-10 text-black text-shadow-md">
-  <div class="flex flex-col items-start">
+  <div class="flex flex-col items-start text-2xl">
     <div>Author: Group 9</div>
     <div>20120454 - Lê Công Đắt</div>
     <div>20120489 - Võ Phi Hùng</div>
     <div>20120558 - Lưu Ngọc Quang</div>
     <div>20120582 - Trần Hữu Thành</div>
   </div>
-  <div class="flex flex-col items-start">
+  <div class="flex flex-col items-start text-2xl">
     <div>Instructor:</div>
     <div>M.S. Trần Văn Quý</div>
     <div>M.S. Trần Duy Quang</div>
@@ -107,15 +107,15 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 # Table of Contents
 
-<div class="toc">
-  <div class="toc-item" @click="$slidev.nav.go(1)">1. Introduction</div>
-  <div class="toc-item" @click="$slidev.nav.go(2)">2. Trading signals with technical indicators</div>
-  <div class="toc-item" @click="$slidev.nav.go(3)">3. Data handling</div>
-  <div class="toc-item" @click="$slidev.nav.go(4)">4. Benchmarking alternative models</div>
-  <div class="toc-subitem" @click="$slidev.nav.go(5)">4.1. Benchmark 1 – simple trading rule</div>
-  <div class="toc-subitem" @click="$slidev.nav.go(6)">4.2. Benchmark 2 – simple classification network</div>
-  <div class="toc-item" @click="$slidev.nav.go(7)">5. Constructing a convolutional neural network</div>
-  <div class="toc-item" @click="$slidev.nav.go(8)">6. Summary</div>
+<div class="toc text-2xl">
+  <div class="toc-item" @click="$slidev.nav.go(3)">1. Introduction</div>
+  <div class="toc-item" @click="$slidev.nav.go(8)">2. Trading signals with technical indicators</div>
+  <div class="toc-item" @click="$slidev.nav.go(14)">3. Data handling</div>
+  <div class="toc-item" @click="$slidev.nav.go(33)">4. Benchmarking alternative models</div>
+  <div class="toc-subitem" @click="$slidev.nav.go(35)">4.1. Benchmark 1 – simple trading rule</div>
+  <div class="toc-subitem" @click="$slidev.nav.go(41)">4.2. Benchmark 2 – simple classification network</div>
+  <div class="toc-item" @click="$slidev.nav.go(53)">5. Constructing a convolutional neural network</div>
+  <div class="toc-item" @click="$slidev.nav.go(83)">6. Summary</div>
 </div>
 
 ---
