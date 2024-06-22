@@ -12,10 +12,26 @@ https://finance.yahoo.com/quote/AAPL/history?period1=1577811600&period2=16094339
 
 <img src='/Yahoo!_Finance_logo_2021.png' className='mx-auto w-100 mt-10'/>
 
+<!--
+Chúng ta sẽ sử dụng Yahoo Finance làm nguồn dữ liệu. Ngoài ra, còn các nguồn dữ liệu khác như Google Finance, Alpha Vantage, Quandl, v.v. 
+Dưới đây là URL để lấy dữ liệu giá cổ phiếu của Apple Inc. (AAPL) từ ngày 31 tháng 12 năm 2019 đến ngày 31 tháng 12 năm 2020 theo ngày.
+-->
+
 ---
 layout: image
 image: "/aapl-stock-data.png"
 ---
+
+<!--
+Có 7 cột dữ liệu mà ta cần quan tâm là: 'Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume'.
+- 'Date': Ngày giao dịch.
+- 'Open': Giá mở cửa.
+- 'High': Giá cao nhất.
+- 'Low': Giá thấp nhất.
+- 'Close': Giá đóng cửa.
+- 'Adj Close': Giá đóng cửa điều chỉnh.
+- 'Volume': Khối lượng giao dịch.
+-->
 
 ---
 transition: fade
@@ -23,26 +39,17 @@ transition: fade
 
 ### Create a class to get stock data
 
-```python {all|1,2,12-18}
+```python {all}
 class YahooDailyReader():
     def __init__(self, symbol=None, start=None, end=None):
         self.symbol = symbol
         self.start = start
         self.end = end
-
-        # Convert start and end dates to Unix timestamp format.
-        unix_start = int(time.mktime(self.start.timetuple()))
-        day_end = self.end.replace(hour=23, minute=59, second=59)
-        unix_end = int(time.mktime(day_end.timetuple()))
-
-        # Build URL to get data from Yahoo Finance.
-        url = 'https://finance.yahoo.com/quote/{}/history?'
-        url += 'period1={}&period2={}'
-        url += '&filter=history'
-        url += '&interval=1d'
-        url += '&frequency=1d'
-        self.url = url.format(self.symbol, unix_start, unix_end)
 ```
+
+<!--
+Chúng ta sẽ tạo một class để lấy dữ liệu giá cổ phiếu từ Yahoo Finance. Class này sẽ có 3 thuộc tính là 'symbol', 'start', 'end' để lưu mã cổ phiếu, ngày bắt đầu và ngày kết thúc.
+-->
 
 ---
 
@@ -74,6 +81,10 @@ class YahooDailyReader():
         return df.set_index('Date')
 ```
 
+<!--
+Chúng ta sẽ dùng thư viện yahoo finance để lấy dữ liệu giá cổ phiếu từ Yahoo Finance. Sau đó, chuyển dữ liệu JSON thành DataFrame của pandas. Tiếp theo, thêm cột 'symbolid' chứa mã cổ phiếu vào DataFrame. Chuyển đổi Unix timestamps thành đối tượng ngày. Loại bỏ các dòng có giá 'Close' là NaN. Đổi tên các cột và đặt cột 'Date' làm chỉ số của DataFrame.
+-->
+
 ---
 
 ### Use our class to get APPL stock data
@@ -89,6 +100,11 @@ df.head()
 
 ![AAPL stock sample](/aapl-stock-sample.png)
 
+<!--
+Thử lấy dữ liệu giá cổ phiếu của Apple Inc. (AAPL) từ ngày 1 tháng 1 năm 1990 đến ngày 28 tháng 5 năm 2024.
+Kết quả trả về là một DataFrame chứa dữ liệu giá cổ phiếu của AAPL.
+-->
+
 ---
 
 ### Download list of NASDAQ stock symbols
@@ -98,6 +114,11 @@ Go to the following URL to download a list of NASDAQ stock symbols (we will use 
 https://www.nasdaq.com/market-activity/stocks/screener
 
 ![NASDAQ stock screener](/nasdaq-stock-screener.png)
+
+<!--
+Giờ ta cần tải danh sách mã cổ phiếu của NASDAQ từ trang web của NASDAQ. Chúng ta sẽ sử dụng các bộ lọc _Mega_, _Large_ và _Medium_ cho _Market Cap_ của cổ phiếu.
+Có thể thấy hiện tại có 1994 mã cổ phiếu có vốn thị trường lớn và trung bình.
+-->
 
 ---
 
@@ -131,15 +152,27 @@ symlist = pd.DataFrame({'Symbol': symlist})
 symlist.to_csv('csvdata/descdata.csv', index=False)
 ```
 
+<!--
+Sau khi tải danh sách mã cổ phiếu của NASDAQ, ta sẽ đọc lên danh sách mã cổ phiếu từ file CSV. Tiếp theo, ta sẽ lặp qua từng mã cổ phiếu để lấy dữ liệu giá cổ phiếu từ Yahoo Finance và lưu vào các file CSV tương ứng với mã cổ phiếu đó. Nếu có lỗi xảy ra, ta sẽ ghi lại mã cổ phiếu đó vào danh sách lỗi. Cuối cùng, ta sẽ cập nhật lại danh sách mã cổ phiếu sau khi loại bỏ các mã cổ phiếu lỗi.
+-->
+
 ---
 layout: image
 image: "/crawling-data.png"
 ---
 
+<!--
+Lúc mà slide này được làm thì có tất cả 2014 mã cổ phiếu và 2 trong số đó bị lỗi nên còn lại 2012 mã cổ phiếu đã được lấy dữ liệu thành công.
+-->
+
 ---
 layout: image
 image: "/data-crawled.png"
 ---
+
+<!--
+Các file CSV chứa dữ liệu giá cổ phiếu của các mã cổ phiếu đã được lưu vào thư mục csvdata.
+-->
 
 ---
 
@@ -152,6 +185,11 @@ Starting by define numbers of days for holding the stock
 ```python
 holding_days = 30
 ```
+
+<!--
+Giờ ta đã có các dữ liệu giá cổ phiếu của các mã cổ phiếu từ NASDAQ. Tiếp theo ta sẽ tiền xử lý dữ liệu để chuẩn bị cho việc xây dựng mô hình dự đoán giá cổ phiếu.
+Ta sẽ bắt đầu bằng việc xác định số ngày giữ cổ phiếu.
+-->
 
 ---
 
@@ -173,6 +211,11 @@ result.tail()
 
 ![Long returns](/long-returns.png)
 
+<!--
+Hàm `long_returns` sẽ tính toán lợi nhuận của một lênh mua cổ phiếu trong một khoảng thời gian giữ cố định (số ngày). Hàm này giả định rằng người giao dịch không có kỹ năng và sẽ mua cổ phiếu với giá cao nhất của ngày trước và bán với giá thấp nhất của ngày khi đóng lệnh.
+Thì giả sử người giao dịch bán với giá thấp nhất vào ngày 20/5, tức là người giao dịch đã mua với giá cao nhất vào ngày 20/4 (30 ngày trước đó) thì lợi nhuận sẽ là 0.1848%
+-->
+
 ---
 
 ### Hypothesis formulation and in-sample testing
@@ -192,6 +235,10 @@ result.tail()
 ```
 
 ![Short returns](/short-returns.png)
+
+<!--
+Tương tự hàm `short_returns` sẽ tính toán lợi nhuận của một lệnh bán cổ phiếu trong một khoảng thời gian giữ cố định (số ngày). Hàm này giả định rằng người giao dịch không có kỹ năng và sẽ bán cổ phiếu với giá thấp nhất của ngày 'numdays' trước đó và mua lại với giá cao nhất của ngày khi đóng lệnh.
+-->
 
 ---
 
@@ -217,6 +264,10 @@ def label_data(df):
 result = label_data(df)
 result.sample(5)
 ```
+
+<!--
+Từ đó ta sẽ dán nhãn dữ liệu dựa trên điều kiện của lợi nhuận mua và lợi nhuận bán. Nếu lợi nhuận mua lớn hơn 0.5%, ta cần mua. Nếu lợi nhuận bán lớn hơn 0.5%, ta cần bán. Ngưỡng 0.5% được sử dụng để tránh các giao dịch có thể dẫn đến lỗ do chi phí giao dịch. Ngưỡng này có thể được điều chỉnh tùy thuộc vào hiệu quả giao dịch của quỹ đầu tư.
+-->
 
 ---
 
@@ -253,6 +304,10 @@ mavdays = [20, 50]
 result = moving_avg_data(df, mavnames, mavdays)
 result.tail()
 ```
+
+<!--
+Hàm `moving_avg_data` sẽ tính toán các giá trị trung bình động cho dữ liệu cổ phiếu. Hàm này sẽ lặp qua từng tên biến và số ngày tương ứng để tính toán giá trị trung bình động. Cuối cùng, hàm sẽ trả về DataFrame với các cột giá trị trung bình động được thêm vào.
+-->
 
 ---
 
@@ -292,6 +347,10 @@ def create_datasets(csvfilename, sample_size):
     print(csvfilename + ' written to disk')
 ```
 
+<!--
+Giờ ta sẽ tạo các bộ dữ liệu cho việc huấn luyện và kiểm tra mô hình. Ta sẽ chọn ngẫu nhiên các mã cổ phiếu từ danh sách mã cổ phiếu và lấy dữ liệu giá cổ phiếu từ các file CSV tương ứng. Sau đó, ta sẽ tính toán lợi nhuận mua và bán dựa trên dữ liệu trước đó. Tiếp theo, ta sẽ tính toán giá trị trung bình động cho dữ liệu cổ phiếu. Cuối cùng, ta sẽ lưu DataFrame vào file CSV.
+-->
+
 ---
 
 ### Hypothesis formulation and in-sample testing
@@ -306,3 +365,7 @@ create_datasets('test_50.csv', 50)
 ```
 
 ![Training and testing datasets](/create-datasets.png)
+
+<!--
+Ta sẽ đọc danh sách mã cổ phiếu từ file CSV. Sau đó, ta sẽ tạo các bộ dữ liệu huấn luyện và kiểm tra với 50 mã cổ phiếu ngẫu nhiên.
+-->
