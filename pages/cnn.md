@@ -1,7 +1,7 @@
 <h1 className="text-lg font-semibold mb-2">Human Decision Process in Trading</h1>
 <div className="flex items-center justify-between">
         <div className="flex-2">
-            <ul className="list-disc ml-5 mt-10 text-xl">
+            <ul className="list-disc ml-5 mt-10 text-2xl">
             <li>Filter noise by observing multiple data points</li>
             <li>Confidence builds with consistent price trends</li>
             <li>Compare new data to historical patterns</li>
@@ -18,8 +18,9 @@
 ---
 
 <h1 className="text-lg font-semibold mb-2">Modeling Investment Logic</h1>
-<ul className="list-disc ml-5 mt-10 text-xl">
+<ul className="list-disc ml-5 mt-10 text-3xl">
         <li>Optimal observation period before trading</li>
+        <li>Given that our holding horizon is 30 days</li>
         <li>Use moving-average data over 12 days</li>
         <li>Take most frequent action</li>
         <li>Hold if multiple crossovers or confusion</li>
@@ -31,7 +32,7 @@
 
 <h1 className="text-lg font-semibold mb-2">Selecting the Network Architecture</h1>
 <div className="flex mt-10">
-      <div className="flex-2 pr-4">
+      <div className="flex-2 pr-4 text-2xl">
         <p className="mb-4">Selecting the appropriate architecture depends on the input data:</p>
         <ul className="list-disc ml-5">
           <li>Input defined as a tensor to capture temporal features</li>
@@ -51,30 +52,51 @@
 
 # What is a Convolutional Neural Network (CNN)?
 
-- A type of deep learning algorithm well suited for visual data.
-- Uses principles from linear algebra, particularly convolution operations.
-- Extracts features and identifies patterns within images.
-- Inspired by the human brain's visual cortex.
-- Used in tasks such as image recognition, object detection, and more.
+<div className="flex">
+
+<ul className='flex-2 text-2xl list-disc'>
+<li> A type of deep learning algorithm well suited for visual data.</li>
+<li> Uses principles from linear algebra, particularly convolution operations.</li>
+<li>Extracts features and identifies patterns within images.</li>
+<li>Inspired by the human brain's visual cortex.</li>
+<li> Used in tasks such as image recognition, object detection, and more.</li>
+</ul>
+
+<img src='/question-mark.png' width='300px' className='flex-1'/>
+
+</div>
 
 ---
 
 # Applications of CNN
 
-- Self-driving cars
-- Facial recognition
-- Medical image analysis
-- Audio and other signal data processing
-- Forecasting time-series
+<div className='flex space-x-4 justify-between items-center pt-4'>
+
+<ul className='text-2xl'>
+  <li>Self-driving cars</li>
+  <li>Facial recognition</li>
+  <li>Medical image analysis</li>
+  <li>Audio and other signal data processing</li>
+  <li>Forecasting time-series</li>
+</ul>
+
+<img src='/car.jpg' className='w-80'></img>
+
+</div>
 
 ---
 
 # How CNNs Work
+<div className='flex justify-between space-x-4 pt-4'>
+<ul className='text-2xl flex-2'>
+  <li>Layers detect different features of an input image.</li>
+  <li>Convolution operation: Slide a filter over the image.</li>
+  <li>Create feature maps to highlight detected features.</li>
+  <li>Build hierarchical representations of the image.</li>
+</ul>
 
-- Layers detect different features of an input image.
-- Use convolution operation to slide a filter over the image.
-- Create feature maps to highlight detected features.
-- Build hierarchical representations of the image.
+<img src='/how.jpg' className='w-120 h-80 flex-3'/>
+</div>
 
 ---
 
@@ -90,37 +112,54 @@
 
 # Convolutional Layer
 
-- Fundamental building block of a CNN.
-- Uses filters to detect features by sliding over the input image.
-- Generates feature maps representing feature presence and intensity.
-- Identifies basic to complex patterns through multiple layers.
+<ul className='text-xl'>
+  <li>Fundamental building block of a CNN.</li>
+  <li>Uses filters (kernels) to detect features by sliding over the input image.</li>
+  <li>Generates feature maps representing the presence and intensity of detected features.</li>
+  <li>Identifies basic to complex patterns through stacking multiple layers.</li>
+</ul>
+<img src='/convo.png' className='w-150'/>
 
 ---
 
 # Pooling Layer
 
-- Follows the convolutional layer.
-- Reduces dimensionality through downsampling (e.g., max pooling, average pooling).
-- Improves efficiency and generalization ability.
-- Retains prominent features for tasks like object detection and image classification.
+<div className='flex pt-4 space-x-4 justify-between items-center'>
+
+<ul className='text-xl'>
+  <li>Follows the convolutional layer.</li>
+  <li>Reduces dimensionality through downsampling (e.g., max pooling, average pooling).</li>
+  <li>Improves efficiency and generalization ability.</li>
+  <li>Retains prominent features for tasks like object detection and image classification.</li>
+</ul>
+
+<img src='/pooling.png' className='w-80'/>
+
+</div>
 
 ---
 
 # Fully Connected Layer
 
-- Critical in the final stages of a CNN.
-- Each neuron connects to every neuron in the next layer.
-- Integrates features extracted from previous layers.
-- Balances computational efficiency and capability to learn complex patterns.
+<ul className='text-xl'>
+  <li>Critical in the final stages of a CNN.</li>
+  <li>Each neuron connects to all neurons in the next layer, unlike convolutional layers.</li>
+  <li>Integrates features extracted from previous convolutional and pooling layers.</li>
+  <li>Balances computational efficiency with the capability to learn complex patterns.</li>
+</ul>
+
+<img src='/fully.png' className='w-100' />
 
 ---
 
 # CNNs vs. Traditional Neural Networks
 
-- Traditional neural networks use fully connected layers throughout.
-- CNNs have fewer parameters due to convolutional layers.
-- Efficient at handling image data through parameter sharing.
-- Pooling layers reduce data dimensionality and improve efficiency.
+<ul className='text-2xl'>
+        <li>Traditional Neural Networks use fully connected layers throughout, where each neuron connects to all neurons in the previous and next layers.</li>
+      <li>Have fewer parameters due to convolutional layers that share weights across the image.</li>
+      <li>Efficiently handle image data through parameter sharing, reducing computational cost.</li>
+      <li>Utilize pooling layers to reduce data dimensionality and further improve efficiency.</li>
+</ul>
 
 ---
 
