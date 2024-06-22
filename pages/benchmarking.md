@@ -4,9 +4,6 @@
 
 - Simple Trading Rule
 - Simple Classification Network
-- Deep Convolutional Network
-- Comparison of Model Performance
-
 ---
 
 ## Simple Trading Rule
@@ -142,17 +139,6 @@ df_accuracy
 - #### Does not distinguish between temporary shifts in moving averages
 
 </div>
-
----
-
-## Simple Classification Network - Overview
-
-### Topics Covered
-
-- Simple Classification Network
-- Diagnostic Chart
-- Heatmap Analysis
-- Performance Comparison
 
 ---
 
