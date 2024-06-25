@@ -115,7 +115,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
   <div class="toc-subitem" @click="$slidev.nav.go(35)">4.1. Benchmark 1 – simple trading rule</div>
   <div class="toc-subitem" @click="$slidev.nav.go(41)">4.2. Benchmark 2 – simple classification network</div>
   <div class="toc-item" @click="$slidev.nav.go(53)">5. Constructing a convolutional neural network</div>
-  <div class="toc-item" @click="$slidev.nav.go(83)">6. Summary</div>
+  <div class="toc-item" @click="$slidev.nav.go(84)">6. Summary</div>
 </div>
 
 ---

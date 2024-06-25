@@ -544,6 +544,15 @@ with tf.compat.v1.Session(graph=graph) as sess:
 
 <div className="flex flex-col space-y-1 mb-4">
       <h1 className="text-lg font-semibold">Training and testing the model</h1>
+      <h2 className="text-lg font-semibold mt-4">Result</h2>
+</div>
+
+<img src='/result-train.png' className='mx-auto w-120'/>
+
+---
+
+<div className="flex flex-col space-y-1 mb-4">
+      <h1 className="text-lg font-semibold">Training and testing the model</h1>
       <h2 className="text-lg font-semibold mt-4">Plot the trajectory of the training accuracy and validation accuracy</h2>
 </div>
 
